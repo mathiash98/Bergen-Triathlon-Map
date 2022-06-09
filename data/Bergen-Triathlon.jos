@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<josm-session version="0.1">
+    <viewport>
+        <center lat="60.397005656673144" lon="5.319271076917649"/>
+        <scale meter-per-pixel="0.589983"/>
+    </viewport>
+    <projection>
+        <projection-choice>
+            <id>core:mercator</id>
+            <parameters/>
+        </projection-choice>
+        <code>EPSG:3857</code>
+    </projection>
+    <layers active="1">
+        <layer index="1" name="Bergen-triathlon-course.geojson" type="osm-data" version="0.1" visible="true">
+            <file>file:/C:/Users/mathi/Documents/MEGAsync/Prosjekter/Bergen%20Triathlon/Bergen-triathlon-course.geojson</file>
+        </layer>
+        <layer index="2" name="AG-Supersprint_cource.png" opacity="0.85" type="piclayerImage" version="0.1" visible="true">
+            <piclayerImage>
+                <file>C:\Users\mathi\Downloads\AG-Supersprint_cource.png</file>
+                <thumbnail>false</thumbnail>
+            </piclayerImage>
+        </layer>
+        <layer index="3" name="Norway Orthophoto" type="imagery" version="0.1" visible="true">
+            <max-zoom>21</max-zoom>
+            <valid-georeference>true</valid-georeference>
+            <bestMarked>true</bestMarked>
+            <transparent>true</transparent>
+            <minimumTileExpire>3600</minimumTileExpire>
+            <name>Norway Orthophoto</name>
+            <id>geovekst-nib</id>
+            <type>tms</type>
+            <url>https://waapi.webatlas.no/maptiles/tiles/webatlas-orto-newup/wa_grid/{zoom}/{x}/{y}.jpeg?api_key=b8e36d51-119a-423b-b156-d744d54123d5</url>
+            <attribution-text>© Geovekst</attribution-text>
+            <attribution-url>https://www.norgeibilder.no/</attribution-url>
+            <permission-reference-url>https://forum.openstreetmap.org/viewtopic.php?id=62083</permission-reference-url>
+            <country-code>NO</country-code>
+            <cookies/>
+            <bounds>57.72468,4.08142,71.40266,31.78344</bounds>
+            <shapes>58.86659,11.53568,58.89784,11.66192,59.09471,11.7935,59.239,11.84243,59.34509,11.82877,59.60387,11.71279,59.63771,11.86205,59.69196,11.95608,59.86895,11.93389,59.8786,12.17881,60.03124,12.46948,60.18972,12.55438,60.31659,12.51237,60.40065,12.61793,60.51512,12.61883,61.01106,12.2538699,61.04632,12.69195,61.34802,12.90756,61.57623,12.57493,61.57175,12.42465,61.72694,12.1523299,62.26512,12.31212,62.61109,12.0707799,62.7455,12.14907,62.89668,12.08883,62.99952,12.23464,63.26684,11.99225,63.47505,12.2332699,63.57117,12.17971,63.96344,12.69313,64.0839,13.21378,64.00514,13.99183,64.18236,14.17035,64.47516,14.13253,64.58356,13.67658,64.88119,14.02455,65.11098,14.33572,65.30365,14.51699,65.67762,14.54177,65.81299,14.63674,66.12496,14.53903,66.14245,15.03881,66.27956,15.50033,66.4795,15.39368,66.59685,15.63473,66.90283,16.04695,67.03827,16.3983199,67.21036,16.41439,67.43617,16.10744,67.5087,16.1645499,67.52589,16.42318,67.64528,16.5866,67.90466,16.7471,68.09995,17.34741,67.95885,17.90583,68.1942399,18.16489,68.52675,18.13721,68.57059,18.4076099,68.49607,18.62222,68.50591,18.98574,68.34558,19.92752,68.4920099,20.24505,68.55586,19.99237,68.65685,20.21137,68.79976,20.34848,68.93227,20.31623,69.0359,20.10322,69.04926,20.55694,69.1083699,20.7206,69.0254099,21.06178,69.10587,21.12098,69.21086,21.01135,69.30076,21.2824,69.26589,21.6264499,68.81965,22.33512,68.70596,22.37485,68.73329,22.5377,68.67674,22.80161,68.67833,23.04635,68.61903,23.16467,68.70049,23.68789,68.81592,23.79776,68.82287,23.9680399,68.7313999,24.17541,68.63655,24.76043,68.55285,24.8543999,68.54387,24.90827,68.6025,24.93347,68.62003,25.12435,68.79008,25.1667,68.87886,25.43334,68.88103,25.62945,69.01157,25.79589,69.19428,25.73272,69.66758,26.02249,69.94207,26.56631,69.89539,27.10601,70.05317,27.63679,70.07401,27.93548,70.00415,27.96569,69.80824,28.40312,69.69095,29.1014,69.47585,29.328,69.2316,28.82859,69.0943,28.7931,68.99986,29.04485,69.10601,29.25292,69.22982,29.32641,69.27632,29.29229,69.31298,29.39117,69.31201,29.57038,69.41631,29.85191,69.39916,29.96795,69.4667,30.13069,69.5658,30.2008,69.6609,30.13137,69.6649599,30.15678,69.53787,30.51589,69.52371,30.82077,69.5556299,30.95329,69.67832,30.96221,69.79192,30.83578,70.17579,31.65161,70.4662,31.78344,70.86989,30.49255,71.30079,28.43261,71.40266,25.66406,71.29374,23.81835,70.40734,18.30322,69.07641,14.24926,67.47913,11.18408,66.90852,11.74438,64.88393,9.95361,62.3649,4.72961,61.69247,4.12948,61.02637,4.0814199,59.19421,4.4577,58.4276,5.31188,57.84475,6.47094,57.72468,7.56408,57.91776,8.4375,58.75006,10.59792,58.88203,10.64905,58.97673,11.09035,59.06743,11.16173,59.10293,11.34175,58.99078,11.44922,58.88136,11.45194,58.86659,11.53568</shapes>
+            <icon>https://register.geonorge.no/data/organizations/_L_norgeibilder96x96.png</icon>
+            <description>Norwegian orthophotos (max zoom 21), courtesy of Geovekst and Norkart.</description>
+            <customHttpHeaders>{}</customHttpHeaders>
+            <category>photo</category>
+            <show-errors>true</show-errors>
+            <automatic-downloading>true</automatic-downloading>
+            <automatically-change-resolution>true</automatically-change-resolution>
+        </layer>
+    </layers>
+</josm-session>
