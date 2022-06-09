@@ -106,7 +106,7 @@ map.on('load', async () => {
  * @return {Promise<CourseGeoJson>}
  */
 async function getCourse(year = 2022) {
-    const resp = await fetch(`./data/Bergen-Triathlon-course-${year}.geojson`);
+    const resp = await fetch(`./data/Bergen-triathlon-course-${year}.geojson`);
 
     if (resp.ok) {
         return resp.json();
