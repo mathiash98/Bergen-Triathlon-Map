@@ -31,7 +31,7 @@ map.on('load', async () => {
         'paint': {
             'line-color': '#fff',
             'line-opacity': 0.001,
-            'line-width': 6,
+            'line-width': 12,
         }
     });
     map.addLayer({
