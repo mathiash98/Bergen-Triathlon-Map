@@ -10,7 +10,7 @@ const map = new mapboxgl.Map({
 map.on('load', async () => {
 
     const course = await getCourse(2022);
-    
+
     map.loadImage('./img/right-arrow.png', (error, img) => {
         if (error) throw error;
         map.addImage('right-arrow', img);
@@ -57,10 +57,10 @@ map.on('load', async () => {
         'type': 'circle',
         'source': 'course',
         'paint': {
-          'circle-radius': 2,
-          'circle-color': "#fff",
-          'circle-stroke-color': "#aaa",
-          'circle-stroke-width': 1,
+            'circle-radius': 2,
+            'circle-color': "#fff",
+            'circle-stroke-color': "#aaa",
+            'circle-stroke-width': 1,
         }
     });
     map.addLayer({
@@ -68,16 +68,39 @@ map.on('load', async () => {
         'type': 'symbol',
         'source': 'course',
         'layout': {
-          'symbol-placement': 'line',
-          'symbol-spacing': 100,
-          'icon-allow-overlap': false,
-          // 'icon-ignore-placement': true,
-          'icon-image': 'right-arrow',
-          'icon-size': 0.5,
-          'visibility': 'visible'
+            'symbol-placement': 'line',
+            'symbol-spacing': 100,
+            'icon-allow-overlap': false,
+            // 'icon-ignore-placement': true,
+            'icon-image': 'right-arrow',
+            'icon-size': 0.5,
+            'visibility': 'visible'
         }
-      });
-    
+    });
+
+    map.addSource('mapbox-dem', {
+        'type': 'raster-dem',
+        'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+        'tileSize': 512,
+        'maxzoom': 14
+    });
+    // add the DEM source as a terrain layer with exaggerated height
+    map.setTerrain({
+        'source': 'mapbox-dem',
+        'exaggeration': 1.5
+    });
+
+    // add a sky layer that will show when the map is highly pitched
+    map.addLayer({
+        'id': 'sky',
+        'type': 'sky',
+        'paint': {
+            'sky-type': 'atmosphere',
+            'sky-atmosphere-sun': [0.0, 0.0],
+            'sky-atmosphere-sun-intensity': 15
+        }
+    });
+
 
 
     const popup = new mapboxgl.Popup({
@@ -88,18 +111,18 @@ map.on('load', async () => {
     map.on('mouseenter', 'course-hitbox', (e) => {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
-        
+
         const text = e.features[0].properties.name;
-         
+
         // Populate the popup and set its coordinates
         // based on the feature found.
         popup.setLngLat(e.lngLat).setHTML(text).addTo(map);
-        });
-         
-        map.on('mouseleave', 'course', () => {
+    });
+
+    map.on('mouseleave', 'course', () => {
         map.getCanvas().style.cursor = '';
         popup.remove();
-        });
+    });
 });
 
 /**
@@ -110,7 +133,7 @@ async function getCourse(year = 2022) {
 
     if (resp.ok) {
         return resp.json();
-      }
+    }
 }
 
 /**
@@ -127,5 +150,5 @@ async function getCourse(year = 2022) {
  * @property {"FeatureCollection"} type
  */
 
- 5.32487690181, 60.39622125674
- 5.3425188716983225, 60.42757096622884
+5.32487690181, 60.39622125674
+5.3425188716983225, 60.42757096622884
