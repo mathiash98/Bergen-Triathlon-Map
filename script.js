@@ -4,6 +4,8 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [5.315, 60.3966],
+    pitch: 45,
+    bearing: -45,
     zoom: 15
 });
 
@@ -84,7 +86,6 @@ map.on('load', async () => {
         'tileSize': 512,
         'maxzoom': 14
     });
-    // add the DEM source as a terrain layer with exaggerated height
     map.setTerrain({
         'source': 'mapbox-dem',
         'exaggeration': 1.5
@@ -100,6 +101,47 @@ map.on('load', async () => {
             'sky-atmosphere-sun-intensity': 15
         }
     });
+
+    const layers = map.getStyle().layers;
+    const labelLayerId = layers.find(
+        (layer) => layer.type === 'symbol' && layer.layout['text-field']
+    ).id;
+    map.addLayer({
+            'id': 'add-3d-buildings',
+            'source': 'composite',
+            'source-layer': 'building',
+            'filter': ['==', 'extrude', 'true'],
+            'type': 'fill-extrusion',
+            'minzoom': 15,
+            'paint': {
+                'fill-extrusion-color': '#aaa',
+
+                // Use an 'interpolate' expression to
+                // add a smooth transition effect to
+                // the buildings as the user zooms in.
+                'fill-extrusion-height': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    15,
+                    0,
+                    15.05,
+                    ['get', 'height']
+                ],
+                'fill-extrusion-base': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    15,
+                    0,
+                    15.05,
+                    ['get', 'min_height']
+                ],
+                'fill-extrusion-opacity': 0.3
+            }
+        },
+        labelLayerId
+    );
 
 
 
