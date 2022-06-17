@@ -10,3 +10,12 @@ Original map from https://www.bergentriathlon.no/news/triathlon%20verdenscup%20l
 
 Example of rendered map:
 ![Rendered map](./Rendered-map-demo.png)
+
+
+## Future plans:
+
+- [x] 3d kart med høydefunksjon
+- [ ] Video av nedstigningen av svingene på Nordnes
+- [ ] Elevation profile across the course
+- [ ] Geotaggede bilder droppet inn i kartet
+- [ ] Dronevideo fra fjellet

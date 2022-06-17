@@ -82,9 +82,11 @@ map.on('load', async () => {
 
     map.addSource('mapbox-dem', {
         'type': 'raster-dem',
-        'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-        'tileSize': 512,
-        'maxzoom': 14
+        'tiles': ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+        'encoding': 'terrarium',
+        'tileSize': 256,
+        'maxzoom': 14,
+        'minzoom': 4,
     });
     map.setTerrain({
         'source': 'mapbox-dem',
